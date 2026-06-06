@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jwax Prime Laptops - Premium UK Used Laptops in Nigeria. Highest quality, verified performance, unbeatable pricing.">
+    <title>Jwax Prime Laptops | Premium UK Used Laptops</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <div id="screen-loader" class="screen-loader">
+        <div class="spinner"></div>
+    </div>
+
+    <div id="toast-container" class="toast-container"></div>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <header class="main-header">
+        <div class="top-bar">
+            <p>⚡ Premium UK Used Laptops Direct to Nigeria • 100% Verified Quality Guarantee</p>
+            <div class="top-bar-links">
+                <a href="faq.html">FAQs</a>
+                <a href="services.html">Services</a>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <a href="index.html" class="logo-brand">
+                <span class="logo-accent">Jwax</span> Prime
+            </a>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <div class="search-container-wrapper">
+                    <input type="text" id="global-search-input" placeholder="Search premium laptops...">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <a href="wishlist.html" class="nav-icon-link" aria-label="Wishlist">
+                    <i class="fas fa-heart"></i>
+                    <span class="badge" id="wishlist-badge">0</span>
+                </a>
+                <a href="cart.html" class="nav-icon-link" aria-label="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="badge badge-accent" id="cart-badge">0</span>
+                </a>
+                <a href="login.html" class="nav-icon-link" aria-label="Account / Login">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="admin.html" class="nav-icon-link admin-indicator" aria-label="Admin Panel">
+                    <i class="fas fa-user-shield"></i>
+                </a>
+                
+                <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle Mobile Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="hero-tagline">Elite Hardware • Unbeatable Value</span>
+                <h1 class="hero-title">Grade-A UK Used Laptops <br>Engineered for Excellence</h1>
+                <p class="hero-subtitle">Experience true enterprise-grade machines directly curated from UK corporate environments. Tested, certified, and under complete warranty.</p>
+                <div class="hero-cta-group">
+                    <a href="products.html" class="btn btn-primary btn-lg">Explore Inventory <i class="fas fa-arrow-right"></i></a>
+                    <a href="#flash-sales" class="btn btn-secondary btn-lg">View Flash Deals</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-container categories-section">
+            <div class="section-header">
+                <h2>Browse by Tier</h2>
+                <p>Select your specialized computing tier today</p>
+            </div>
+            <div class="category-grid">
+                <div class="category-card" data-category="Enterprise">
+                    <div class="cat-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3>Enterprise Business</h3>
+                    <p>ThinkPads, Latitudes, and EliteBooks designed for productivity.</p>
+                </div>
+                <div class="category-card" data-category="Gaming">
+                    <div class="cat-icon"><i class="fas fa-gamepad"></i></div>
+                    <h3>Pro Gaming & Rendering</h3>
+                    <p>High frame-rate setups running dedicated NVIDIA RTX GPUs.</p>
+                </div>
+                <div class="category-card" data-category="Creative">
+                    <div class="cat-icon"><i class="fas fa-palette"></i></div>
+                    <h3>Creative & Development</h3>
+                    <p>Retina MacBooks and high-end workstation displays.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="flash-sales" class="section-container flash-sales-section">
+            <div class="section-header-row">
+                <div>
+                    <span class="live-indicator"><span class="pulse"></span> LIVE NOW</span>
+                    <h2>Flash Value Opportunities</h2>
+                </div>
+                <div class="countdown-timer-container">
+                    Ending In: <span id="flash-clock" class="clock-digits">00:00:00</span>
+                </div>
+            </div>
+            <div class="products-grid-layout" id="flash-products-target">
+                </div>
+        </section>
+
+        <section class="section-container featured-section">
+            <div class="section-header">
+                <h2>Curated Featured Stock</h2>
+                <p>Hand-picked Grade-A options matching elite diagnostic standards</p>
+            </div>
+            <div class="products-grid-layout" id="featured-products-target">
+                </div>
+        </section>
+
+        <section class="trust-signals-section">
+            <div class="signal-item">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Rigorous Diagnostics</h3>
+                <p>Every unit clears a 45-point hardware verification layout test.</p>
+            </div>
+            <div class="signal-item">
+                <i class="fas fa-truck-moving"></i>
+                <h3>Secured Transit</h3>
+                <p>Insured nationwide deployment to all major Nigerian states.</p>
+            </div>
+            <div class="signal-item">
+                <i class="fas fa-file-contract"></i>
+                <h3>Extended Warranty</h3>
+                <p>Comprehensive 180-day operational backing structure standard.</p>
+            </div>
+        </section>
+
+        <section class="section-container testimonial-section">
+            <div class="section-header">
+                <h2>Client Testimonials</h2>
+                <p>Real verification from corporate developers and casual professionals</p>
+            </div>
+            <div class="testimonial-carousel-wrapper">
+                <div class="testimonial-track" id="testimonial-track">
+                    <div class="testimonial-card">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testimonial-text">"The Grade-A ThinkPad T14 looks practically pristine. Battery health configuration was delivered at 91%. Exceptional customer support architecture."</p>
+                        <h4 class="testimonial-author">Chidi O.</h4>
+                        <span class="author-title">DevOps Engineer, Lagos</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter-subscription-block">
+            <div class="newsletter-inner">
+                <h2>Gain Immediate Drops Notifications</h2>
+                <p>Our premium shipments move fast. Subscribe to get immediate CSV catalogs of fresh UK inventory arrivals prior to standard site deployment.</p>
+                <form id="newsletter-form" class="newsletter-form-container">
+                    <input type="email" id="news-email" placeholder="Enter business email layout address..." required>
+                    <button type="submit" class="btn btn-primary">Subscribe Priority Access</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="global-footer">
+        <div class="footer-grid-layout">
+            <div class="footer-column brand-summary-col">
+                <h3 class="footer-logo"><span>Jwax</span> Prime</h3>
+                <p>The definitive terminal for elite enterprise-grade UK corporate refurbished laptops in Nigeria. Performance-vetted, structurally pristine, commercially unbeatable.</p>
+                <div class="social-links-media">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Inventory Catalogs</h4>
+                <ul>
+                    <li><a href="products.html?cat=Enterprise">Enterprise Business</a></li>
+                    <li><a href="products.html?cat=Gaming">High Performance Gaming</a></li>
+                    <li><a href="products.html?cat=Creative">Workstations & Creative</a></li>
+                    <li><a href="products.html?flag=flash">Flash Value Drops</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Support Systems</h4>
+                <ul>
+                    <li><a href="faq.html">Warranty Policy</a></li>
+                    <li><a href="services.html">Repair Center</a></li>
+                    <li><a href="contact.html">Bulk Purchases Procurement</a></li>
+                    <li><a href="about.html">Corporate Methodology</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Headquarters Contact</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 1 Akinremi Street, Computer Village, Ikeja, Lagos state, Nigeria</p>
+                <p><i class="fas fa-phone-alt"></i> +234 816 811 1666</p>
+                <p><i class="fas fa-envelope"></i> stanokonkwo92@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-copyright-row">
+            <p>&copy; 2026 Jwax Prime Laptops. All Technical Rights Reserved. Designed to Enterprise Specifications.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

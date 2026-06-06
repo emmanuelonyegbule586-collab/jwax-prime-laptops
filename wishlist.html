@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Priority Items | Jwax Prime Laptops</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="toast-container" class="toast-container"></div>
+    <header class="main-header"><nav class="navbar"><a href="index.html" class="logo-brand"><span class="logo-accent">Jwax</span> Wishlist</a></nav></header>
+
+    <main class="section-container">
+        <h1 style="font-size:2rem; font-weight:800; margin-bottom:30px;">Your Monitored Hardware Assets Wishlist</h1>
+        <div class="products-grid-layout" id="wishlist-rendering-grid-target">
+            </div>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const targetGrid = document.getElementById('wishlist-rendering-grid-target');
+            
+            function renderWishlistWorkspace() {
+                if(!targetGrid) return;
+                
+                const wishlistItems = JWAX_DATABASE.filter(p => AppState.wishlist.includes(p.id));
+                
+                if(wishlistItems.length === 0) {
+                    targetGrid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:40px; color:var(--text-light); font-weight:600;">No computing elements have been assigned priority monitoring tracking status flags.</div>`;
+                    return;
+                }
+
+                targetGrid.innerHTML = wishlistItems.map(product => `
+                    <article class="product-card-blueprint" data-product-id="${product.id}">
+                        <div class="product-image-frame">
+                            <button class="wishlist-floating-btn active" onclick="purgeWishlistItem('${product.id}')" aria-label="Save Item"><i class="fas fa-trash-alt" style="color:var(--danger)"></i></button>
+                            <img src="${product.image}" alt="${product.name}">
+                        </div>
+                        <div class="product-details-content">
+                            <span class="product-meta-brand">${product.brand}</span>
+                            <h3 class="product-title-heading">${product.name}</h3>
+                            <h3 style="margin-bottom:15px;">₦${product.price.toLocaleString()}</h3>
+                            <button class="product-action-footer-btn" onclick="transferWishlistToCart('${product.id}')"><i class="fas fa-shopping-cart"></i> Move To Active Cart</button>
+                        </div>
+                    </article>
+                `).join('');
+            }
+
+            window.purgeWishlistItem = function(id) {
+                AppState.wishlist = AppState.wishlist.filter(pid => pid !== id);
+                AppState.syncWishlist();
+                renderWishlistWorkspace();
+                showToast("Item scrubbed safely from priority configuration monitor logs.", "warning");
+            };
+
+            window.transferWishlistToCart = function(id) {
+                const targetItem = JWAX_DATABASE.find(p => p.id === id);
+                const existing = AppState.cart.find(item => item.id === id);
+                if (existing) { existing.qty++; } else { AppState.cart.push({ ...targetItem, qty: 1 }); }
+                AppState.syncCart();
+                
+                // Clear out from wishlist structure loop
+                AppState.wishlist = AppState.wishlist.filter(pid => pid !== id);
+                AppState.syncWishlist();
+                
+                renderWishlistWorkspace();
+                showToast("System allocation bundle successfully transferred over to production cart lines!");
+            };
+
+            renderWishlistWorkspace();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistics Support Framework Center | Jwax Prime Laptops</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-split-workspace { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; padding: 60px 5%; }
+        .contact-card-form { background-color: var(--bg-surface); border: 1px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); }
+        .input-group-row { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+        .input-group-row input, .input-group-row textarea { padding: 14px; border: 1px solid var(--border-color); background-color: var(--bg-main); border-radius: var(--radius-sm); color: var(--text-primary); }
+        .map-frame-embed { height: 300px; width: 100%; border-radius: var(--radius-md); margin-top: 30px; border: 1px solid var(--border-color); overflow: hidden; }
+        /* Live Chat Terminal UI implementation styling */
+        .live-chat-floating-panel { position: fixed; bottom: 30px; left: 30px; z-index: 1000; }
+        .chat-launcher-btn { background: #25d366; color: #fff; padding: 14px 24px; border-radius: 50px; font-weight: 700; box-shadow: var(--shadow-lg); cursor: pointer; display: flex; align-items: center; gap: 10px; }
+    </style>
+</head>
+<body>
+    <div id="toast-container" class="toast-container"></div>
+    <header class="main-header"><nav class="navbar"><a href="index.html" class="logo-brand"><span class="logo-accent">Jwax</span> Prime</a></nav></header>
+
+    <main class="contact-split-workspace">
+        <section class="contact-card-form">
+            <h2 style="font-size:2rem; font-weight:800; margin-bottom:12px;">Initiate Technical Communications</h2>
+            <p style="color:var(--text-secondary); margin-bottom:30px;">Our corporate helpdesk operations monitoring networks answer within 60 minutes sequence duration bounds.</p>
+            <form id="contact-form-system">
+                <div class="input-group-row"><label style="font-weight:700;">Account Profile Identity / Name</label><input type="text" id="cnt-name" required></div>
+                <div class="input-group-row"><label style="font-weight:700;">Secure Callback Electronic Mailing Address</label><input type="email" id="cnt-email" required></div>
+                <div class="input-group-row"><label style="font-weight:700;">Context Inquiry Payload Description</label><textarea id="cnt-msg" rows="5" required></textarea></div>
+                <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:14px;">Dispatch Pipeline Request</button>
+            </form>
+        </section>
+
+        <aside class="logistics-info-sidebar">
+            <h3 style="font-size:1.4rem; font-weight:800; margin-bottom:20px;">Command Central Headquarters Location</h3>
+            <p style="color:var(--text-secondary); margin-bottom:12px;"><i class="fas fa-map-marked-alt" style="color:var(--accent); margin-right:10px;"></i> Commercial Suite 42, Silicon Valley Plaza, Computer Village, Ikeja, Lagos, Nigeria.</p>
+            <p style="color:var(--text-secondary); margin-bottom:12px;"><i class="fas fa-headset" style="color:var(--accent); margin-right:10px;"></i> Operational Lines Hotline: +234 816 811 1666</p>
+            
+            <div class="map-frame-embed">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.3644265882046!2d3.3398913!3d6.6015383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b9228fa47b31b%3A0x67396a9efc991e5e!2sComputer%20Village%2C%20Ikeja!5e0!3m2!1sen!2sng!4v1710000000000!5m2!1sen!2sng" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </aside>
+    </main>
+
+    <div class="live-chat-floating-panel">
+        <a href="https://wa.me/2348168111666?text=Hello%20Jwax%20Prime%20Laptops%2C%20I%20am%20inquiring%20about%20your%20UK%20used%20inventory." target="_blank" class="chat-launcher-btn">
+            <i class="fab fa-whatsapp" style="font-size:1.4rem;"></i> Secure Support Line
+        </a>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>
+        document.getElementById('contact-form-system')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            showToast("Inquiry packet transmitted successfully over to our logistics dashboard network cluster.", "success");
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identity Management Portal | Jwax Prime Laptops</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .auth-viewport-wrapper { min-height: 900px; height: 90vh; display: flex; justify-content: center; align-items: center; padding: 0 20px; }
+        .auth-card-flipper-container { width: 100%; max-width: 450px; background-color: var(--bg-surface); border: 1px solid var(--border-color); padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); transition: var(--transition-smooth); position: relative; overflow: hidden; }
+        .auth-form-block { transition: var(--transition-smooth); }
+        .register-form-segment { display: none; }
+        .auth-card-flipper-container.register-mode-active .login-form-segment { display: none; }
+        .auth-card-flipper-container.register-mode-active .register-form-segment { display: block; }
+        .input-entry-field { position: relative; margin-bottom: 20px; }
+        .input-entry-field input { width: 100%; padding: 14px 16px; background-color: var(--bg-main); border: 1px solid var(--border-color); border-radius: var(--radius-sm); color: var(--text-primary); }
+        .password-eye-toggle-icon { position: absolute; right: 16px; top: 16px; cursor: pointer; color: var(--text-light); }
+        .switch-prompt-link { text-align: center; margin-top: 24px; font-weight: 600; font-size: 0.9rem; color: var(--text-secondary); }
+        .switch-prompt-link a { color: var(--accent); font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div id="toast-container" class="toast-container"></div>
+    <div class="auth-viewport-wrapper">
+        <div class="auth-card-flipper-container" id="auth-card-flipper">
+            
+            <div class="auth-form-block login-form-segment">
+                <h2 style="font-size:2rem; font-weight:800; margin-bottom:8px; text-align:center;">Welcome Back</h2>
+                <p style="text-align:center; color:var(--text-light); margin-bottom:30px;">Access your enterprise procurement account dashboard</p>
+                <form id="login-form-element">
+                    <div class="input-entry-field"><input type="email" placeholder="Business Email Address" required></div>
+                    <div class="input-entry-field">
+                        <input type="password" id="login-password-input" placeholder="Secure Password Access Code" required>
+                        <i class="fas fa-eye password-eye-toggle-icon" id="toggle-password-visibility"></i>
+                    </div>
+                    <div style="display:flex; justify-content:between; align-items:center; font-size:0.85rem; font-weight:600; margin-bottom:24px;">
+                        <label style="display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="checkbox"> Keep Connection Active</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:14px;">Authorize Workspace Deployment</button>
+                </form>
+                <p class="switch-prompt-link">New to the platform? <a href="#" id="switch-to-register">Create Corporate Profile Matrix</a></p>
+            </div>
+
+            <div class="auth-form-block register-form-segment">
+                <h2 style="font-size:2rem; font-weight:800; margin-bottom:8px; text-align:center;">Register Account</h2>
+                <p style="text-align:center; color:var(--text-light); margin-bottom:30px;">Initialize your profile mapping workspace matrix configurations</p>
+                <form id="register-form-element">
+                    <div class="input-entry-field"><input type="text" placeholder="Full Associated Legal Name" required></div>
+                    <div class="input-entry-field"><input type="email" placeholder="Corporate Domain Email Address" required></div>
+                    <div class="input-entry-field"><input type="password" placeholder="Generate Secure Password Blueprint" required></div>
+                    <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:14px; background:var(--accent);">Build Certified Profile</button>
+                </form>
+                <p class="switch-prompt-link">Already registered? <a href="#" id="switch-to-login">Log In Instead</a></p>
+            </div>
+
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

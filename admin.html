@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal Core Console Management Dashboard | Jwax Prime Laptops</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .admin-dashboard-container-layout { padding: 40px 5%; }
+        .metrics-grid-view { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-bottom: 40px; }
+        .metric-card { background-color: var(--bg-surface); border: 1px solid var(--border-color); padding: 30px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+        .metric-card h4 { font-size: 0.85rem; text-transform: uppercase; color: var(--text-light); letter-spacing: 1px; margin-bottom: 10px; }
+        .crud-layout-wrapper { background-color: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 35px; overflow-x: auto; }
+        .admin-data-table { width: 100%; border-collapse: collapse; min-width: 700px; margin-top: 20px; }
+        .admin-data-table th, .admin-data-table td { padding: 16px; text-align: left; border-bottom: 1px solid var(--border-color); }
+        .admin-data-table th { background-color: var(--bg-main); font-weight: 700; }
+        .action-control-btn-group button { background: none; cursor: pointer; font-weight: 700; font-size: 0.9rem; margin-right: 12px; }
+    </style>
+</head>
+<body>
+    <div id="toast-container" class="toast-container"></div>
+    <header class="main-header"><nav class="navbar"><a href="index.html" class="logo-brand"><span class="logo-accent">Admin Control</span> Console Matrix</a></nav></header>
+
+    <main class="admin-dashboard-container-layout">
+        <section class="metrics-grid-view">
+            <div class="metric-card"><h4>Gross Platform Sales Volume</h4><p style="font-size:2.2rem; font-weight:800; color:var(--accent);">₦42,850,000</p></div>
+            <div class="metric-card"><h4>Verified Registered Corporates</h4><p style="font-size:2.2rem; font-weight:800;">1,248 Users</p></div>
+            <div class="metric-card"><h4>Dispatched Stock Framework Allocation</h4><p style="font-size:2.2rem; font-weight:800;">94 Units</p></div>
+        </section>
+
+        <section class="crud-layout-wrapper">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                <h3 style="font-size:1.5rem; font-weight:800;">Core Real-time Inventory Ledger Matrix</h3>
+                <button class="btn btn-primary" id="open-add-stock-sim-btn"><i class="fas fa-plus"></i> Inject New System Entity Asset</button>
+            </div>
+            <table class="admin-data-table">
+                <thead>
+                    <tr><th>System Tracking ID</th><th>Laptop Model Descriptor</th><th>Brand Class</th><th>Base Commercial Value Valuation</th><th>Operations Control</th></tr>
+                </thead>
+                <tbody id="admin-crud-table-target">
+                    </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const tableTarget = document.getElementById('admin-crud-table-target');
+            if(!tableTarget) return;
+
+            function renderAdminTableMatrix() {
+                tableTarget.innerHTML = JWAX_DATABASE.map(p => `
+                    <tr>
+                        <td style="font-family:monospace; font-weight:700;">${p.id}</td>
+                        <td><strong>${p.name}</strong><br><small style="color:var(--text-light)">${p.processor}</small></td>
+                        <td><span class="spec-pill">${p.brand}</span></td>
+                        <td style="font-weight:700;">₦${p.price.toLocaleString()}</td>
+                        <td class="action-control-btn-group">
+                            <button style="color:var(--accent);" onclick="simEditItem('${p.id}')"><i class="fas fa-edit"></i> Modify</button>
+                            <button style="color:var(--danger);" onclick="simDeleteItem('${p.id}')"><i class="fas fa-trash-alt"></i> Purge</button>
+                        </td>
+                    </tr>
+                `).join('');
+            }
+
+            window.simDeleteItem = function(id) {
+                showToast(`Asset execution packet tracking entry alignment ${id} scrubbed safely from data logs.`, "warning");
+                // Structural pipeline tracking engine simulation logic manipulation
+                const idx = JWAX_DATABASE.findIndex(p => p.id === id);
+                if(idx > -1) { JWAX_DATABASE.splice(idx,1); renderAdminTableMatrix(); }
+            };
+
+            window.simEditItem = function(id) { showToast(`Opening data modification pipeline for tracking asset matrix mapping element: ${id}`); };
+
+            document.getElementById('open-add-stock-sim-btn').addEventListener('click', () => {
+                const mockupNewItem = {
+                    id: "LP" + Math.floor(Math.random() * 900 + 100),
+                    name: "Refurbished Asus ROG Strix G15",
+                    brand: "Asus",
+                    category: "Gaming",
+                    ram: "16GB",
+                    storage: "512GB SSD",
+                    processor: "AMD Ryzen 7 / RTX 3060",
+                    grade: "Grade A Premium Standard",
+                    price: 980000,
+                    slashedPrice: 1100000,
+                    discount: 11,
+                    image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=600&q=80",
+                    isFeatured: true,
+                    isFlashSale: false
+                };
+                JWAX_DATABASE.push(mockupNewItem);
+                renderAdminTableMatrix();
+                showToast(`New dynamic platform item entity structural data unit ${mockupNewItem.id} initialized smoothly!`);
+            });
+
+            renderAdminTableMatrix();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Manifest Allocation Cart | Jwax Prime Laptops</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .cart-split-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; padding: 50px 5%; }
+        .cart-items-panel { background-color: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 30px; overflow-x: auto; }
+        .cart-table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        .cart-table th { text-align: left; padding-bottom: 20px; border-bottom: 2px solid var(--border-color); font-weight: 700; color: var(--text-secondary); }
+        .cart-data-row td { padding: 24px 0; border-bottom: 1px solid var(--border-color); vertical-align: middle; }
+        .cart-product-cell { display: flex; align-items: center; gap: 16px; }
+        .cart-product-cell img { width: 80px; height: 60px; object-fit: cover; border-radius: var(--radius-sm); }
+        .qty-stepper { display: inline-flex; align-items: center; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background-color: var(--bg-main); }
+        .qty-stepper button { padding: 6px 12px; font-weight: 700; cursor: pointer; }
+        .qty-stepper span { width: 30px; text-align: center; font-weight: 700; }
+        .item-delete-btn { color: var(--text-light); cursor: pointer; font-size: 1.1rem; }
+        .item-delete-btn:hover { color: var(--danger); }
+        .summary-checkout-card { background-color: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 30px; height: fit-content; }
+        .summary-row { display: flex; justify-content: space-between; margin-bottom: 18px; font-weight: 600; color: var(--text-secondary); }
+        .summary-row.grand-total { border-top: 2px dashed var(--border-color); padding-top: 20px; font-size: 1.4rem; font-weight: 800; color: var(--text-primary); }
+        .coupon-box { display: flex; gap: 10px; margin-bottom: 24px; }
+        .coupon-box input { flex-grow: 1; border: 1px solid var(--border-color); padding: 10px 14px; border-radius: var(--radius-sm); background-color: var(--bg-main); color:var(--text-primary); }
+        @media (max-width: 950px) { .cart-split-layout { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div id="toast-container" class="toast-container"></div>
+    <header class="main-header"><nav class="navbar"><a href="index.html" class="logo-brand"><span class="logo-accent">Jwax</span> Prime</a></nav></header>
+
+    <main class="cart-split-layout">
+        <section class="cart-items-panel">
+            <h2 style="font-size:1.8rem; font-weight:800; margin-bottom:24px;">Your Selected Procurement Asset Manifest</h2>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Hardware System Configuration</th>
+                        <th>Unit Rate</th>
+                        <th>Quantity</th>
+                        <th>Subtotal Value</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items-table-body">
+                    </tbody>
+            </table>
+        </section>
+
+        <aside class="summary-checkout-card">
+            <h3 style="font-size:1.3rem; font-weight:800; margin-bottom:20px;">Financial Verification Summary</h3>
+            <form id="coupon-form-submit" class="coupon-box">
+                <input type="text" id="coupon-input-field" placeholder="PROMO CODE (e.g. PRIME10)">
+                <button type="submit" class="btn btn-secondary" style="color:var(--text-primary); border-color:var(--border-color); padding:10px 16px;">Apply</button>
+            </form>
+            <div class="summary-row"><span>Base Subtotal Asset Cost</span><span id="summary-subtotal">₦0</span></div>
+            <div class="summary-row"><span>Insured Delivery Routing Fee</span><span id="summary-delivery">₦0</span></div>
+            <div class="summary-row grand-total"><span>Total Final Obligation</span><span id="summary-grandtotal">₦0</span></div>
+            <a href="checkout.html" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:15px; padding:16px;">Advance to Secure Settlement Checkout Gateway</a>
+        </aside>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

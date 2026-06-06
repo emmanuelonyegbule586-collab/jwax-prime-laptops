@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Profile Framework | Jwax Prime Laptops</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .about-hero-block { background: var(--primary-gradient); color: #fff; padding: 80px 5%; text-align: center; }
+        .metrics-counter-strip { display: flex; justify-content: space-around; background-color: var(--bg-surface); padding: 40px 5%; border-bottom: 1px solid var(--border-color); text-align: center; }
+        .counter-number-val { font-size: 3rem; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 6px; }
+        .about-split-narrative { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; padding: 80px 5%; align-items: center; }
+        @media (max-width: 768px) { .about-split-narrative { grid-template-columns: 1fr; } .metrics-counter-strip { flex-direction: column; gap: 30px; } }
+    </style>
+</head>
+<body>
+    <header class="main-header"><nav class="navbar"><a href="index.html" class="logo-brand"><span class="logo-accent">Jwax</span> Prime</a></nav></header>
+    
+    <section class="about-hero-block">
+        <h1 style="font-size:3rem; font-weight:800; margin-bottom:12px;">Corporate Hardware Procurement Redefined</h1>
+        <p style="font-size:1.2rem; max-width:600px; margin:0 auto; opacity:0.9;">Connecting high-tier enterprise operational environments in the UK directly to ambitious workspaces across Nigeria.</p>
+    </section>
+
+    <section class="metrics-counter-strip">
+        <div><div class="counter-number-val" data-target="4500">0</div><p style="font-weight:700; color:var(--text-secondary);">Verified Systems Deployed</p></div>
+        <div><div class="counter-number-val" data-target="100">0</div><p style="font-weight:700; color:var(--text-secondary);">% Diagnostic Quality Assured</p></div>
+        <div><div class="counter-number-val" data-target="15">0</div><p style="font-weight:700; color:var(--text-secondary);">Corporate Hub Partners</p></div>
+    </section>
+
+    <section class="about-split-narrative">
+        <div>
+            <h2 style="font-size:2.2rem; font-weight:800; margin-bottom:20px;">Rigorous Diagnostics. <br>Flawless Execution Performance.</h2>
+            <p style="color:var(--text-secondary); line-height:1.8; margin-bottom:16px;">Jwax Prime Laptops operates on a strict hardware methodology layout strategy. We do not source from random, unverified channels. Every laptop inside our database catalog framework is acquired directly through institutional corporate upgrades within the United Kingdom.</p>
+            <p style="color:var(--text-secondary); line-height:1.8;">Our internal technical engineers enforce a 45-point stress-testing monitoring routine sequence tracking component degradation, structural motherboard endurance metrics, and performance stability layout frameworks before deployment approval clearance manifests.</p>
+        </div>
+        <div>
+            <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=600&q=80" style="border-radius:var(--radius-lg); box-shadow:var(--shadow-lg);" alt="Testing facility">
+        </div>
+    </section>
+
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Animated Numerical Statistics Matrix Counter algorithm
+            const counters = document.querySelectorAll('.counter-number-val');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const increment = target / 80;
+                
+                const executeUpdate = () => {
+                    const current = +counter.innerText;
+                    if(current < target) {
+                        counter.innerText = Math.ceil(current + increment);
+                        setTimeout(executeUpdate, 15);
+                    } else {
+                        counter.innerText = target + (target === 100 ? "%" : "+");
+                    }
+                };
+                executeUpdate();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy Compliance Accordions FAQ | Jwax Prime Laptops</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .faq-shell-wrapper { max-width: 750px; margin: 60px auto; padding: 0 20px; }
+        .accordion-element-node { background-color: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-sm); margin-bottom: 16px; overflow: hidden; transition: var(--transition-smooth); }
+        .accordion-header-trigger { padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 700; font-size: 1.1rem; }
+        .accordion-content-panel { padding: 0 24px; max-height: 0; overflow: hidden; transition: var(--transition-smooth); color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; }
+        .accordion-element-node.expanded-active .accordion-content-panel { padding-bottom: 24px; max-height: 300px; }
+        .accordion-element-node.expanded-active .accordion-header-trigger i { transform: rotate(180deg); color: var(--accent); }
+    </style>
+</head>
+<body>
+    <header class="main-header"><nav class="navbar"><a href="index.html" class="logo-brand"><span class="logo-accent">Jwax</span> Policy Support</a></nav></header>
+
+    <main class="faq-shell-wrapper">
+        <h1 style="font-size:2.5rem; font-weight:800; text-align:center; margin-bottom:12px;">Operational Policy Matrix & FAQs</h1>
+        <p style="text-align:center; color:var(--text-secondary); margin-bottom:50px;">Clear compliance mapping resolving questions regarding systemic sourcing, logistics, and technical warranties.</p>
+
+        <div class="accordion-element-node">
+            <div class="accordion-header-trigger"><span>What establishes the authenticity verification framework of UK Used units?</span><i class="fas fa-chevron-down"></i></div>
+            <div class="accordion-content-panel"><p>All operational laptop inventories present inside our deployment systems are acquired directly through corporate tech asset lifecycle termination partnerships within the UK. They clear automated 45-point hardware component monitoring layout scans prior to transit confirmation.</p></div>
+        </div>
+
+        <div class="accordion-element-node">
+            <div class="accordion-header-trigger"><span>What parameters govern the 180-day hardware coverage warranty?</span><i class="fas fa-chevron-down"></i></div>
+            <div class="accordion-content-panel"><p>The systemic technical structural warranty covers unexpected electrical logic board terminal failures, screen display matrix anomalies, and internal memory read-write tracking controller errors. Physical liquid spills configuration interference blocks or external structural impact events invalidate coverage protocols.</p></div>
+        </div>
+
+        <div class="accordion-element-node">
+            <div class="accordion-header-trigger"><span>What are the nationwide shipping fulfillment timeline windows?</span><i class="fas fa-chevron-down"></i></div>
+            <div class="accordion-content-panel"><p>Logistical delivery packages moving to locations across Lagos State conclude transit within a 24-48 hour sequence duration. External regional state drop points (e.g., Abuja capital territory or Port Harcourt hub centers) resolve cleanly within 3 to 5 active business days.</p></div>
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script>
+        document.querySelectorAll('.accordion-header-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const node = trigger.closest('.accordion-element-node');
+                node.classList.toggle('expanded-active');
+            });
+        });
+    </script>
+</body>
+</html>
