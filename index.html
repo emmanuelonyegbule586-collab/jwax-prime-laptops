@@ -230,6 +230,24 @@
         <div class="footer-copyright-row">
             <p>&copy; 2026 Jwax Prime Laptops. All Technical Rights Reserved. Designed to Enterprise Specifications.</p>
         </div>
+        <div class="menu-toggle">
+    ☰
+</div>
+        <script>
+const menuBtn =
+document.querySelector('.menu-toggle') ||
+document.querySelector('.hamburger') ||
+document.querySelector('.mobile-menu-btn');
+
+const navMenu =
+document.querySelector('.nav-links') ||
+document.querySelector('.nav-menu') ||
+document.querySelector('nav ul');
+
+menuBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+</script>
     </footer>
 
     <script src="js/app.js"></script>
