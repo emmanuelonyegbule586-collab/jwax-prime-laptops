@@ -1,0 +1,62 @@
+/* =========================
+   MOBILE NAVIGATION FIX
+========================= */
+
+@media screen and (max-width: 768px) {
+
+    .menu-toggle,
+    .hamburger,
+    .mobile-menu-btn {
+        display: block;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .nav-links,
+    .nav-menu,
+    nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #0f172a;
+
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        padding: 25px 0;
+        z-index: 1000;
+    }
+
+    .nav-links.active,
+    .nav-menu.active,
+    nav ul.active {
+        display: flex;
+    }
+
+    .nav-links li,
+    .nav-menu li,
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a,
+    .nav-menu a,
+    nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 12px 0;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .nav-links a:hover,
+    .nav-menu a:hover,
+    nav ul li a:hover {
+        background: rgba(255,255,255,0.1);
+    }
+}
