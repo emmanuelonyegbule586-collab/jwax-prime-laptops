@@ -1,0 +1,79 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN ADAPTATION LAYER
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    html {
+        font-size: 15px;
+    }
+    .footer-grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+    .hero-title {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile Menu Implementation Architecture */
+    .hamburger-menu {
+        display: flex;
+    }
+    .nav-links {
+        position: fixed;
+        top: 73px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 73px);
+        background-color: var(--bg-surface);
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+        gap: 30px;
+        box-shadow: var(--shadow-lg);
+        transition: var(--transition-smooth);
+        z-index: 998;
+    }
+    .nav-links.mobile-active {
+        left: 0;
+    }
+    .search-container-wrapper {
+        display: none; /* Relocate or hide in basic responsive layout */
+    }
+    
+    .hero-section {
+        text-align: center;
+        justify-content: center;
+        padding: 0 20px;
+    }
+    .hero-cta-group {
+        justify-content: center;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .section-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    .footer-grid-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    .section-container {
+        padding: 50px 20px;
+    }
+    .category-grid, .products-grid-layout {
+        grid-template-columns: 1fr;
+    }
+}
